@@ -1,14 +1,16 @@
-console.log('server associates controller is loaded');
+console.log('Server Associates Controller is loaded');
 var mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 var Associate = mongoose.model('Associate');
 
 module.exports = {
-    index: function(req,res){
-        console.log("hi", req.body.pass);
-        Associate.find({}, function(err, results){
-            console.log("here are results", results);
-            return res.json(results) ; // this is what gets sent back to the .then function in factory
+    login: function(req,res){
+        Associate.findOne({employee_id: req.body.pass}, function(err, results){
+            if(results == null){
+                return res.json({error: "No employee with that ID found"});
+            }else{
+                return res.json(results);
+            }
         })
     },
 

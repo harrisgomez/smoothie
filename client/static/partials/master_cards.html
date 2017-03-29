@@ -1,0 +1,28 @@
+<div class="master_cards">
+    <div id='in-text' style='display:inline-block'>
+        <div class="input-field col s12">
+            <input id='first_name' type='text' class="validate" ng-model="member.f_name">
+            <label for='first_name'>First Name</label>
+        </div>
+        <div class="input-field col s12">
+            <input id='last_name' type='text' class="validate" ng-model="member.l_name">
+            <label for='last_name'>Last Name</label>
+        </div>
+        <div class="input-field col s12">
+            <input id='phone' type='text' class="validate" ng-model="member.phone">
+            <label for='phone'>Phone #</label>
+            <button class="waves-effect waves-light btn" ng-click="create()">Add Member</button>
+        </div>
+    </div>
+    <div style='display:inline-block'>
+        <input id='in-text' type="text" placeholder='Filter Member' ng-model="members_filter">
+        <div class="members_border">
+            <ul>
+                <li ng-click="profile(member._id)" ng-repeat="member in members | orderBy: 'f_name' | filter: members_filter ">
+                    {{member.f_name}} {{member.l_name}} - {{member.phone}}
+                    <hr>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

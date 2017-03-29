@@ -1,4 +1,4 @@
-console.log('Associates Factory');
+console.log('Associates Factory loaded');
 
 app.factory('associatesFactory', ['$http', function($http) {
     var factory = {};
@@ -10,9 +10,8 @@ app.factory('associatesFactory', ['$http', function($http) {
     // }
 
     factory.login = function(employee_id, callback){
-        console.log(employee_id);
         $http.post('/login', employee_id).then(function(returned_data){
-            callback(returned_data);
+            callback(returned_data.data);
         })
     }
 

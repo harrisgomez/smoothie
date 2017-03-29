@@ -23,7 +23,11 @@
         <script src="assets/controllers/menu_controller.js" charset="utf-8"></script>
         <script src="assets/controllers/associate_login_controller.js" charset="utf-8"></script>
         <script src="assets/controllers/member_option_controller.js" charset="utf-8"></script>
+        <script src="assets/controllers/master_cards_controller.js" charset="utf-8"></script>
+        <script src="assets/controllers/member_profile_controller.js" charset="utf-8"></script>
         <script src='assets/factories/associatesFactory.js'></script>
+        <script src='assets/factories/membersFactory.js'></script>
+        <script src='assets/factories/punchesFactory.js'></script>
 
         <script type="text/javascript">
             $(document).ready(function() {
@@ -36,6 +40,7 @@
         <div id="banner">
             <h4>Healthy Spirits Juice Bar</h4>
         </div>
-        <div ng-view></div>
+        <div ng-view style='border:10px solid blue'>
+        </div>
     </body>
 </html>

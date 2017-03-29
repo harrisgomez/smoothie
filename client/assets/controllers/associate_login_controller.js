@@ -2,9 +2,12 @@ app.controller('associate_login_Controller', ['$scope', '$location', '$cookies',
     $scope.associate = {};
 
     $scope.login = function(){
-        console.log($scope.associate);
         associatesFactory.login($scope.associate, function(returned_data){
-            console.log("front end controller", returned_data);
+            if('error' in returned_data){
+                $scope.errors = returned_data.error;
+            }else{
+                $location.url('/master_cards');
+            }
         })
     }
 }])

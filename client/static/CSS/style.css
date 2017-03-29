@@ -7,7 +7,7 @@
     border: 3px solid black;
     background-color: black;
     width: 100%;
-    position: fixed;
+    position: relative;
 }
 #banner h4 {
     color: #ffa500;
@@ -21,15 +21,38 @@
 .menu a {
     margin-top: 10px;
 }
-.member_option {
+.member_option, .master_cards {
     height: 100%;
     margin: 23% 20% 20% 20%;
     text-align: center;
+    /*color: orange;*/
+}
+.members_border {
+    height: 15em;
+    border: 8px solid black;
+    background-color: gray;
     color: orange;
+    opacity: 0.9;
+    overflow-y: scroll;
+}
+.profile {
+    color: orange;
+    text-align: center;
+    background-color: black;
+}
+#in-text {
+    color: skyblue;
+}
+/*#member_link {
+    color: orange;
+}*/
+html {
+    height: 100%;
 }
 body {
+    border: 12px solid red;
     width: 100%;
-    height: 100%;
+    min-height: 100%;
     background-image: url('/static/images/logo.jpg');
     background-repeat: no-repeat;
     background-size: contain;
