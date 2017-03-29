@@ -20,5 +20,16 @@ module.exports = {
         Member.findOne({_id: req.params.id}, function(err, result){
             return res.json(result);
         })
+    },
+
+    delete: function(req, res){
+        Member.remove({_id: req.params.id}, function(err, result){
+            if(err){
+                console.log("Error finding member with given ID to delete");
+                return res.json(err);
+            }else{
+                return res.json({message: "Successfully deleted member"});
+            }
+        })
     }
 }

@@ -1,0 +1,12 @@
+<button class="waves-effect waves-light btn" ng-click="back()">Back</button>
+<div class="menu">
+    <input id='in-text' type="text" placeholder='Filter Member' ng-model="members_filter">
+    <div class="members_border">
+        <ul>
+            <li ng-click="guest_profile(member._id)" ng-repeat="member in members | orderBy: 'f_name' | filter: members_filter ">
+                {{member.f_name}} {{member.l_name}}
+                <hr>
+            </li>
+        </ul>
+    </div>
+</div>

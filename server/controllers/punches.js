@@ -36,5 +36,19 @@ module.exports = {
                 })
             })
         })
+    },
+
+    delete: function(req, res){
+        console.log(req.params);
+        Member.findOne({_id: req.params.id}, function(err, member){
+            if(err){
+                console.log("Error in finding member with given ID");
+                return res.json(err);
+            }else{
+                member.punches.pop();
+                member.save();
+                return res.json({message: `Successfully removed 1 punch from ${member.f_name} ${member.l_name}`})
+            }
+        })
     }
 }

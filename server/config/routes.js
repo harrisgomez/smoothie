@@ -8,5 +8,7 @@ module.exports = function(app){
     app.get('/members', members.index);
     app.post('/members/new', members.create);
     app.get('/members/:id', members.show);
-    app.post('/punch/:id', punches.create);
+    app.post('/members/delete/:id', members.delete);
+    app.post('/punch/add/:id', punches.create);
+    app.post('/punch/delete/:id', punches.delete);
 };

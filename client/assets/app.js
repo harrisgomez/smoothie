@@ -14,12 +14,16 @@ app.config(function($routeProvider) {
         templateUrl: 'static/partials/master_cards.html',
         controller: 'master_cards_Controller'
     })
-    .when('/member_option', {
-        templateUrl: 'static/partials/member_option.html',
-        controller: 'member_option_Controller'
-    })
     .when('/member/:id', {
         templateUrl: 'static/partials/member_profile.html',
         controller: 'member_profile_Controller'
+    })
+    .when('/member_lookup', {
+        templateUrl: '/static/partials/member_lookup.html',
+        controller: 'member_lookup_Controller'
+    })
+    .when('/guest_profile/:id', {
+        templateUrl: '/static/partials/guest_profile.html',
+        controller: 'guest_profile_Controller'
     })
 })

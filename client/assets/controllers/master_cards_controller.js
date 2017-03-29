@@ -18,4 +18,8 @@ app.controller('master_cards_Controller', ['$location', '$scope','membersFactory
     $scope.profile = function(id){
         $location.url(`/member/${id}`);
     }
+
+    $scope.back = function(){
+        $location.url('/associate_login');
+    }
 }])

@@ -21,5 +21,11 @@ app.factory('membersFactory', ['$http', function($http) {
         })
     }
 
+    factory.delete = function(id, callback){
+        $http.post(`/members/delete/${id}`).then(function(returned_data){
+            callback(returned_data.data);
+        })
+    }
+
     return factory;
 }])

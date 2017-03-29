@@ -10,4 +10,8 @@ app.controller('associate_login_Controller', ['$scope', '$location', '$cookies',
             }
         })
     }
+
+    $scope.back = function(){
+        $location.url('/');
+    }
 }])
